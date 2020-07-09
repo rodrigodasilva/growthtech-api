@@ -34,6 +34,14 @@ class UsersController {
 
     return response.json({ users: responseUsers.data, ...paginationInfo });
   }
+
+  async show(request, response) {
+    const userId = request.params.id;
+
+    const responseUser = await jsonPlaceholderApi.get(`/users/${userId}`);
+
+    return response.json(responseUser.data);
+  }
 }
 
 export default new UsersController();
