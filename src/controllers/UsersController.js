@@ -17,6 +17,7 @@ class UsersController {
       params: {
         _page: page,
         _limit: per_page,
+        _embed: 'posts',
         ...(name ? { name_like: name } : {}),
         ...(website ? { website_like: website } : {}),
         ...(zipcode ? { 'address.zipcode_like': zipcode } : {}),
